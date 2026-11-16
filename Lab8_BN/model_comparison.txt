@@ -1,0 +1,29 @@
+First-order vs second-order model comparison
+
+Parameter counts (a table entry is one stored conditional probability; free parameters are degrees of freedom per normalized row):
+First order: 17 probability entries; 6 free parameters.
+Second order: 19 probability entries, including its initial-token distribution; 4 free parameters.
+
+Unseen context counts (candidate contexts formed from vocabulary tokens, excluding <END>):
+First order: 0 unseen contexts out of 11 possible previous-token contexts.
+Second order: 107 unseen contexts out of 121 possible two-token combinations (14 observed). Some combinations are not valid sentence positions, so this is the full vocabulary-pair space.
+
+Generated-text diversity over 20 sampled sequences (fixed seed): first order 10/20 unique, 20/20 reached <END>; second order 6/20 unique, 20/20 reached <END>.
+
+First-order examples:
+1. the cat sat on the dog ran to the cat sat on the cat sat on the dog ran to the dog sat on the mat
+2. the park
+3. the dog sat on the rug
+4. the park
+5. the cat sat on the cat sat on the mat
+
+Second-order examples:
+1. the cat sat on the rug
+2. the cat sat on the mat
+3. the dog sat on the mat
+4. the cat sat on the mat
+5. the dog ran to the park
+
+Qualitative comparison:
+The first-order model remembers only the immediately previous token, so it can switch between sentence fragments or loop (for example, repeating 'the cat sat on the ...').
+The second-order model also conditions on the preceding token, which tends to preserve short phrases and sentence endings seen in the training data. With this tiny corpus, it mostly recombines familiar fragments and has many unseen two-token contexts.

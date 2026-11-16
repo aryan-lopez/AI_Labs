@@ -1,0 +1,10 @@
+"""Tokenized example dataset for the Bayesian Network language-model lab."""
+
+SENTENCES = [
+    ["<START>", "the", "cat", "sat", "on", "the", "mat", "<END>"],
+    ["<START>", "the", "cat", "sat", "on", "the", "rug", "<END>"],
+    ["<START>", "the", "dog", "sat", "on", "the", "mat", "<END>"],
+    ["<START>", "the", "dog", "ran", "to", "the", "park", "<END>"],
+    ["<START>", "the", "cat", "ran", "to", "the", "park", "<END>"],
+    ["<START>", "the", "dog", "sat", "on", "the", "rug", "<END>"],
+]

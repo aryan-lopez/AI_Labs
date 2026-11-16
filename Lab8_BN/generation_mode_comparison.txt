@@ -1,0 +1,17 @@
+Greedy generation (argmax):
+1. the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on the [stopped at token limit]
+2. the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on the [stopped at token limit]
+3. the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on the [stopped at token limit]
+4. the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on the [stopped at token limit]
+5. the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on the cat sat on the [stopped at token limit]
+
+Sampling generation:
+1. the cat sat on the dog ran to the cat sat on the cat sat on the dog ran to the dog sat on the mat [reached <END>]
+2. the park [reached <END>]
+3. the dog sat on the rug [reached <END>]
+4. the park [reached <END>]
+5. the cat sat on the cat sat on the mat [reached <END>]
+
+Distinct sequences: greedy 1/5; sampling 4/5.
+Greedy repeats the same highest-probability path, while sampling can choose different next tokens according to their probabilities.
+If greedy generation reaches the token limit, its argmax choices are cycling without selecting <END>.

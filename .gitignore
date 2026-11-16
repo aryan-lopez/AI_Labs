@@ -1,0 +1,4 @@
+__pycache__/
+
+.venv/
+Lab7_LLM_Transformers/offload/
